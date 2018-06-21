@@ -23,7 +23,7 @@
 	display: flex;
 }
 
-.form-to-add input {
+.form-to-add input, .form-to-get input {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -48,4 +48,10 @@ h3 {
 	padding: 20px 20px;
 	background-color: #cccccc;
 	border-radius: 15px;
+}
+
+.table-space {
+	background-color: #ffffff;
+	/*border-radius: 15px;*/
+	padding: 5px;
 }
