@@ -6,18 +6,15 @@ if (mysqli_connect_error()) {
   die("Ошибка подключения");
 }
 
-$errors = array();
-$success = false;
-
 if (array_key_exists('add', $_POST)) {
   if ($_POST['name'] == '') {
-    $errors[] = "Не введено навзание фильма";
+    echo "<p>Не введено навзание фильма</p>";
   }
   else if ($_POST['genre'] == '') {
-    $errors[] = "Не введен жанр фильма";
+    echo "<p>Не введен жанр фильма</p>";
   }
   else if ($_POST['year'] == '') {
-    $errors[] = "Не указан год создания фильма";
+    echo "<p>Не указан год создания фильма</p>";
   }
   else {
     $query = "INSERT INTO `films` (`name`, `genre`, `year`) VALUES (
@@ -27,7 +24,7 @@ if (array_key_exists('add', $_POST)) {
   )";
 
     if(mysqli_query($connect, $query)) {
-      $success = true;
+      echo "<p>Фильм был успешно добавлен в базу!</p>";
     }
     else {
       echo "<p>Ошибка. Фильм не был добавлен в базу.</p>";
@@ -38,12 +35,6 @@ if (array_key_exists('add', $_POST)) {
 $queryAll = "SELECT * FROM `films`";
 $result = mysqli_query($connect, $queryAll);
 $films = array();
-
-if ($result) {
-        while ($row = mysqli_fetch_array($result)) {
-          $films[] = $row;
-        }
-      }
 
 ?>
 
@@ -64,7 +55,6 @@ if ($result) {
     <link rel="stylesheet" href="libs/jquery-custom-scrollbar/jquery.custom-scrollbar.css"/><!-- endbuild -->
 <!-- build:cssCustom css/main.css -->
     <link rel="stylesheet" href="./css/main.css"/><!-- endbuild -->
-    <link rel="stylesheet" href="./css/custom.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
 <!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
@@ -73,34 +63,32 @@ if ($result) {
     <div class="container user-content pt-35">
       <h1 class="title-1"> Фильмотека</h1>
       <?php 
-
-        if ($success == true) {
-          ?>
-          <div class="success">Фильм был успешно добавлен в базу!</div>
-          <?php
-        }
         foreach ($films as $key => $value) {
         ?>
         <div class="card mb-20">
           <h4 class="title-4"><?php echo $films[$key]['name'];?></h4>
           <div class="badge"><?php echo $films[$key]['genre'];?></div>
           <div class="badge"><?php echo $films[$key]['year'];?></div>
-        </div>
+        </div
         <?php  
           }  
         ?>
+      <div class="card mb-20">
+        <h4 class="title-4">Такси 2</h4>
+        <div class="badge">комедия</div>
+        <div class="badge">2000</div>
+      </div>
+      <div class="card mb-20">
+        <h4 class="title-4">Облачный атлас</h4>
+        <div class="badge">драма</div>
+        <div class="badge">2012</div>
+      </div>
       <div class="panel-holder mt-80 mb-40">
         <div class="title-4 mt-0">Добавить фильм</div>
         <form action="index.php" method="POST">
-          <?php  
-            for ($index = 0; $index < count($errors); $index++) {
-              echo '<div class="error">'.$errors[$index].'</div>';
-            }
-            
-          ?>
-          <!-- <div class="error hidden">Название фильма не может быть пустым.</div> -->
+          <div class="error">Название фильма не может быть пустым.</div>
           <label class="label-title">Название фильма</label>
-          <input class="input" type="text" placeholder="Такси 2" name="name"/>
+          <input class="input" type="text" placeholder="Такси 2" name="title"/>
           <div class="row">
             <div class="col">
               <label class="label-title">Жанр</label>
@@ -110,9 +98,7 @@ if ($result) {
               <label class="label-title">Год</label>
               <input class="input" type="text" placeholder="2000" name="year"/>
             </div>
-          </div>
-          <input type="submit" class="button pb-20" href="regular" value="Добавить" name="add">
-          <!-- </div><a class="button" href="regular">Добавить	</a> -->
+          </div><a class="button" href="regular">Добавить	</a>
         </form>
       </div>
     </div><!-- build:jsLibs js/libs.js -->
