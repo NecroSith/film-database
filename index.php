@@ -107,7 +107,7 @@ if ($result) {
           <div class="card__header">
             <h4 class="title-4"><?php echo $films[$key]['name'];?></h4>
             <div class="button-block">
-              <a href="?action=delete&id=<?php echo $films[$key]['id'];?>" class="button button--edit">Редактировать</a>
+              <a href="edit.php?id=<?php echo $films[$key]['id'];?>" class="button button--edit">Редактировать</a>
               <a href="?action=delete&id=<?php echo $films[$key]['id'];?>" class="button button--delete">Удалить</a>
             </div>
           </div>
