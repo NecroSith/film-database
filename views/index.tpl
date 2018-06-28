@@ -13,6 +13,9 @@
       </div>
       <div class="badge"><?php echo $films[$key]['genre'];?></div>
       <div class="badge"><?php echo $films[$key]['year'];?></div>
+      <div class="mt-20">
+      <a href="single.php?id=<?php echo $films[$key]['id'];?>" class="button button--more-info">Подробнее</a>
+    </div>
     </div>
 <?php  
   }  
