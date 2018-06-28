@@ -13,7 +13,7 @@ if ($_GET) {
 
  
     if ($result) {
-      $info = "Фильм успешно удален";
+      $resultInfo = "Фильм успешно удален";
     }
   }
 }
@@ -21,6 +21,7 @@ if ($_GET) {
 $films = films_all($connect);
 
 include('views/head.tpl');
+include('views/notifications.tpl');
 include('views/index.tpl');
 include('views/footer.tpl');
   

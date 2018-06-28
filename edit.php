@@ -22,12 +22,10 @@ if (array_key_exists('update', $_POST)) {
     $result = update_film($connect, $_POST['name'], $_POST['genre'], $_POST['year'], $_GET['id']);
 
     if($result) {
-      // $success = true;
-      echo "<div class='success'>Ошибка. Фильм не был добавлен в базу.</p>";
+      $resultSuccess = "Фильм был успешно добавлен в базу";
     }
     else {
-      echo "<div class='error'>Ошибка. Фильм не был добавлен в базу.</p>";
-      // $success = false;
+      $resultError = "Ошибка. Фильм не был добавлен в базу";
     }
   }
 
@@ -35,7 +33,8 @@ if (array_key_exists('update', $_POST)) {
 
 $film = get_film($connect, $_GET['id']);
 
- include('views/head.tpl');
+include('views/head.tpl');
+include('views/notifications.tpl');
 include('views/edit-film.tpl');
 include('views/footer.tpl');
 
