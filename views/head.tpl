@@ -20,4 +20,12 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
+   
+      
     <div class="container user-content pt-35">
+      <nav class="header-admin mb-40">
+        <div class="admin-nav">
+          <a href="index.php" class="admin-nav__link">Все фильмы</a>
+          <a href="add-film.php" class="admin-nav__link">Добавить фильм</a>
+        </div>
+      </nav>
