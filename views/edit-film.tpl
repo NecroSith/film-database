@@ -15,7 +15,7 @@
         ?>
       <div class="panel-holder mb-20">
         <div class="title-4 mt-0">Редактировать данные о фильме</div>
-        <form action="edit.php?id=<?=$film['id']?>" method="POST">
+        <form enctype="multipart/form-data" action="edit.php?id=<?=$film['id']?>" method="POST">
           <?php  
             for ($index = 0; $index < count($errors); $index++) {
               echo '<div class="error">'.$errors[$index].'</div>';
@@ -34,6 +34,12 @@
               <label class="label-title">Год</label>
               <input class="input" type="text" placeholder="2000" name="year" value="<?=$film['year']?>" />
             </div>
+          </div>
+           <textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"><?=$film['description'];?></textarea>
+          <div class="mb-20">
+             <label class="label-title">Изображение</label>
+             <p>Изображение jpg или png, рекомендуемая ширина 945 px  и более, высота - от 400 px и более. Вес не более 2 Мб</p>
+              <input type="file" name="image" id="file"multiple="multiple"/>
           </div>
           <input type="submit" class="button pb-20" href="regular" value="Сохранить изменения" name="update">
           <!-- </div><a class="button" href="regular">Добавить	</a> -->
