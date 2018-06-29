@@ -12,9 +12,12 @@
   </div>
   <div class="badge"><?php echo $films['genre'];?></div>
   <div class="badge"><?php echo $films['year'];?></div>
-  <div class="mt-20">
-    <a href="single.php?id=<?php echo $films['id'];?>" class="button button--more-info">Подробнее</a>
+  <div class="user-content">
+    <p><?=$films['description'];?></p>
   </div>
+<!--   <div class="mt-20">
+    <a href="single.php?id=<?php echo $films['id'];?>" class="button button--more-info">Подробнее</a>
+  </div> -->
 </div>
 
       

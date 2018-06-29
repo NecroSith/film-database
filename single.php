@@ -7,13 +7,13 @@ $connect = dbconnect();
 
 require('films.php');
 
-if ($_GET['action'] == 'delete') {
-	$result = delete_film($connect, $_GET['id']);
+// if ($_GET['action'] == 'delete') {
+// 	$result = delete_film($connect, $_GET['id']);
 
-	if ($result) {
-  		$resultinfo = "Фильм успешно удален";
-	}
-}
+// 	if ($result) {
+//   		$resultinfo = "Фильм успешно удален";
+// 	}
+// }
 
 
 $films = get_film($connect, $_GET['id']);

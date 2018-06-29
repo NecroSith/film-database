@@ -27,6 +27,7 @@ if ($success == true) {
 	      <input class="input" type="text" placeholder="2000" name="year"/>
 	    </div>
 	  </div>
+	   <textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"></textarea>
 	  <input type="submit" class="button pb-20" href="regular" value="Добавить" name="add">
 	  <!-- </div><a class="button" href="regular">Добавить	</a> -->
 	</form>

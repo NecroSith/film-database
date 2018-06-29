@@ -20,7 +20,7 @@ if (array_key_exists('add', $_POST)) {
     $errors[] = "Не указан год создания фильма";
   }
   else {
-  	$result = add_film($connect, $_POST['name'], $_POST['genre'], $_POST['year']);
+  	$result = add_film($connect, $_POST['name'], $_POST['genre'], $_POST['year'], $_POST['description']);
 
   	if($result) {
       $success = true;

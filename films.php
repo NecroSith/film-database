@@ -19,12 +19,14 @@ function films_all($connect) {
 	 return $films;
 }
 
-function add_film($connect, $name, $genre, $year) {
+function add_film($connect, $name, $genre, $year, $description = '') {
   
-    $query = "INSERT INTO `films` (`name`, `genre`, `year`) VALUES (
+    $query = "INSERT INTO `films` (`name`, `genre`, `year`, `description`) VALUES (
     '" . mysqli_real_escape_string($connect, $_POST['name']) ."', 
     '" . mysqli_real_escape_string($connect, $_POST['genre']) ."', 
-    '" . mysqli_real_escape_string($connect, $_POST['year']) ."'
+    '" . mysqli_real_escape_string($connect, $_POST['year']) ."',
+    '" . mysqli_real_escape_string($connect, $_POST['description']) ."'
+
   )";
 
   	$result = mysqli_query($connect, $query);
