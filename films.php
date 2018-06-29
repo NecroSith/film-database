@@ -41,6 +41,8 @@ function add_film($connect, $name, $genre, $year, $description = '') {
 
 function update_film($connect, $name, $genre, $year, $description, $id) {
 
+    $db_fileName = '';
+
     if (isset($_FILES['image']['name']) && $_FILES['image']['tmp_name'] != '') {
         $fileName = $_FILES['image']['name'];
         $fileTempLoc = $_FILES['image']['tmp_name'];
@@ -56,7 +58,7 @@ function update_film($connect, $name, $genre, $year, $description, $id) {
             $errors[] = "Изображение недопустимого размера";
         }
 
-        $db_fileName = rand(0, 999999999) . "." . $fileExtn;
+        $db_fileName = rand(100000000, 999999999) . "." . $fileExtn;
 
         if ($fileSize > 2097152) {
             $errors[] = "Файл слишком большой. Размер загружаемого файла не должен превышать 2 Мб";

@@ -39,7 +39,7 @@
           <div class="mb-20">
              <label class="label-title">Изображение</label>
              <p>Изображение jpg или png, рекомендуемая ширина 945 px  и более, высота - от 400 px и более. Вес не более 2 Мб</p>
-              <input type="file" name="image" id="file"multiple="multiple"/>
+              <input type="file" name="image"/>
           </div>
           <input type="submit" class="button pb-20" href="regular" value="Сохранить изменения" name="update">
           <!-- </div><a class="button" href="regular">Добавить	</a> -->

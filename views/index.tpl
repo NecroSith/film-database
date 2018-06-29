@@ -7,7 +7,7 @@
       <div class="row">
 
         <div class="col-2">
-          <img height=200 src="<?=HOST?>data/films/min/<?=$film['image']?>" alt="<?=$films['name'];?>">
+          <img height=200 src="<?=HOST?>data/films/min/<?=$films[$key]['image']?>" alt="<?php echo $films[$key]['name'];?>">
         </div>
 
         <div class="col-10">
