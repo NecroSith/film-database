@@ -3,6 +3,7 @@
 require('config.php');
 require('dbconnect.php');
 
+require('functions/login_function.php');
 $connect = dbconnect();
 
 require('films.php');

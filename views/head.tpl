@@ -26,8 +26,17 @@
       <nav class="header-admin mb-40">
         <div class="admin-nav">
           <a href="index.php" class="admin-nav__link">Все фильмы</a>
+          <?php if (isAdmin()) {  ?>
           <a href="add-film.php" class="admin-nav__link">Добавить фильм</a>
+
+        <?php }?>
           <a href="request.php" class="admin-nav__link">Указать информацию</a>
+          <a href="login.php" class="admin-nav__link">Войти как администратор</a>
+
+          <?php if (isAdmin()) { ?>
+            <a href="logout.php" class="admin-nav__link">Выход</a>
+          <?php } ?>
+
         </div>
       </nav>
 
@@ -38,8 +47,7 @@
         <div>
           <p>Привет, <?=$_COOKIE['user-name']?>! Надеюсь в славном городе <?=$_COOKIE['user-city']?> сегодня хорошая погода!</p>
         </div>
-            <?php 
-          } else { ?>      
+          <?php  } else { ?>      
             <p>Привет, <?=$_COOKIE['user-name']?>!</p>
           <?php }} ?>
 

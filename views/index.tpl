@@ -11,11 +11,21 @@
         </div>
 
         <div class="col-10">
-          <div class="card__header">
+          <div class="card__header mb-10">
             <h4 class="title-4"><?php echo $films[$key]['name'];?></h4>
             <div class="button-block">
-              <a href="edit.php?id=<?php echo $films[$key]['id'];?>" class="button button--edit">Редактировать</a>
-              <a href="?action=delete&id=<?php echo $films[$key]['id'];?>" class="button button--delete">Удалить</a>
+               <?php if (isAdmin()) { ?>
+
+                <a href="edit.php?id=<?php echo $films[$key]['id'];?>" class="button button--edit">Редактировать</a>
+
+              <?php }
+
+                if (isAdmin()) { ?>
+
+                <a href="?action=delete&id=<?php echo $films[$key]['id'];?>" class="button button--delete">Удалить</a>
+
+              <?php }?>
+              
             </div>
           </div>
           <div class="badge"><?php echo $films[$key]['genre'];?></div>
