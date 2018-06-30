@@ -69,3 +69,7 @@
   padding-top: 0.34em;
   padding-bottom: 0.34em;
 }
+
+.image--big {
+  max-height: 450px;
+}

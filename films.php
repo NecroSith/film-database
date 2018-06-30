@@ -39,7 +39,7 @@ function add_film($connect, $name, $genre, $year, $description = '') {
   }
 
 
-function update_film($connect, $name, $genre, $year, $description, $id) {
+function update_film($connect, $name, $genre, $year, $id, $description) {
 
     $db_fileName = '';
 
@@ -71,7 +71,7 @@ function update_film($connect, $name, $genre, $year, $description, $id) {
         }
 
         $imageFolderLoc = ROOT . 'data/films/full/';
-        $imageFolderLocMin = ROOT . 'data/films/min';
+        $imageFolderLocMin = ROOT . 'data/films/min/';
         // $imageFolderLocFull = ROOT . 'data/films/full';
 
         $uploadFile = $imageFolderLoc . $db_fileName;

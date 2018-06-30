@@ -4,11 +4,11 @@
 <div class="card mb-20">
   <div class="row">
 
-    <div class="col">
-      <img src="<?=HOST?>/data/films/chas-pik.jpg" alt="<?php echo $films['name'];?>">
+    <div class="col-4">
+      <img class="image--big" src="<?=HOST?>/data/films/full/<?=$films['image'];?>" alt="<?php echo $films['name'];?>">
     </div>
 
-    <div class="col">
+    <div class="col-8">
         <div class="card__header">
           <h4 class="title-4"><?php echo $films['name'];?></h4>
           <div class="button-block">
