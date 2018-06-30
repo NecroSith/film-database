@@ -1,5 +1,7 @@
 <?php 
 
+require('functions/login_function.php');
+
 if (isset($_POST['user-submit'])) {
 	$userName = $_POST['user-name'];
 	$userCity = $_POST['user-city'];
