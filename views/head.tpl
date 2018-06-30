@@ -31,8 +31,9 @@
 
         <?php }?>
           <a href="request.php" class="admin-nav__link">Указать информацию</a>
-          <a href="login.php" class="admin-nav__link">Войти как администратор</a>
-
+          <?php if (!isAdmin()) { ?>
+            <a href="login.php" class="admin-nav__link">Войти как администратор</a>
+          <?php } ?>
           <?php if (isAdmin()) { ?>
             <a href="logout.php" class="admin-nav__link">Выход</a>
           <?php } ?>
