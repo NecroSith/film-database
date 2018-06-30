@@ -27,5 +27,20 @@
         <div class="admin-nav">
           <a href="index.php" class="admin-nav__link">Все фильмы</a>
           <a href="add-film.php" class="admin-nav__link">Добавить фильм</a>
+          <a href="request.php" class="admin-nav__link">Указать информацию</a>
         </div>
       </nav>
+
+      <?php if (isset($_COOKIE['user-name'])) { 
+
+          if(isset($_COOKIE['user-city'])) {
+        ?>
+        <div>
+          <p>Привет, <?=$_COOKIE['user-name']?>! Надеюсь в славном городе <?=$_COOKIE['user-city']?> сегодня хорошая погода!</p>
+        </div>
+            <?php 
+          } else { ?>      
+            <p>Привет, <?=$_COOKIE['user-name']?>!</p>
+          <?php }} ?>
+
+      
