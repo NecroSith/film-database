@@ -22,7 +22,7 @@
 
                 if (isAdmin()) { ?>
 
-                <a href="?action=delete&id=<?php echo $films['id'];?>" class="button button--delete">Удалить</a>
+                <a href="?action=delete&id=<?php echo $film['id'];?>" class="button button--delete">Удалить</a>
 
               <?php }?>
               
