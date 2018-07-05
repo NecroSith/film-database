@@ -1,5 +1,6 @@
 <?php 
 
+require('config.php');
 require('functions/login_function.php');
 
 if (isset($_POST['user-submit'])) {
