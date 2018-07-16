@@ -62,3 +62,14 @@
 	text-decoration: none;
 	height: unset !important;
 }
+
+.button--more-info {
+  font-size: 14px; 
+  height: unset;
+  padding-top: 0.34em;
+  padding-bottom: 0.34em;
+}
+
+.image--big {
+  max-height: 450px;
+}
